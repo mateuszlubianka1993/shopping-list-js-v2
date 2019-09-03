@@ -143,6 +143,27 @@
             </div>
         </div>
     </div>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-firestore.js"></script>
+
+    <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA8Gk2xvfgBDGMSX-1kuwX7ttjsuyoIsIA",
+            authDomain: "shopping-list-js-fd80b.firebaseapp.com",
+            databaseURL: "https://shopping-list-js-fd80b.firebaseio.com",
+            projectId: "shopping-list-js-fd80b",
+            storageBucket: "",
+            messagingSenderId: "260062283292",
+            appId: "1:260062283292:web:893ef22d263fd6f9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const database = firebase.firestore();
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const signupForm = document.querySelector('#signup-form');
     signupForm.addEventListener('submit', addUser);
+
+    const logoutBtn = document.querySelector('#logout-btn');
+    logoutBtn.addEventListener('click', logoutUser);
 });
 
 const addUser = (e) => {
@@ -12,7 +15,14 @@ const addUser = (e) => {
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
         console.log(cred.user);
         const signupForm = document.querySelector('#signup-form');
-        $('#signup-modal').modal('hide')
+        $('#signup-modal').modal('hide');
         signupForm.reset();
+    });
+};
+
+const logoutUser = () => {
+    auth.signOut().then(() => {
+        console.log('user signed out');
+        $('#logout-modal').modal('hide');
     });
 };

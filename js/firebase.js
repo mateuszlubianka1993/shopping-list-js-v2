@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+    auth.onAuthStateChanged(user => {
+        if(user) {
+            console.log('logged in', user);
+        } else {
+            console.log('logged out');
+        }
+    });
+
     const signupForm = document.querySelector('#signup-form');
     signupForm.addEventListener('submit', addUser);
 
@@ -25,7 +33,6 @@ const addUser = (e) => {
 
 const logOutUser = () => {
     auth.signOut().then(() => {
-        console.log('user signed out');
         $('#logout-modal').modal('hide');
     });
 };
@@ -37,7 +44,6 @@ const logInUser = (e) => {
     const password = document.querySelector('#login-password').value;
 
     auth.signInWithEmailAndPassword(email, password).then(() => {
-        console.log('user logged in');
         const loginForm = document.querySelector('#login-form');
         $('#login-modal').modal('hide');
         loginForm.reset();

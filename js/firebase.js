@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     auth.onAuthStateChanged(user => {
-        if(user) {
-            console.log('logged in', user);
+        if (user) {
+            database.collection('products').get().then(snapshot => {
+                displayItems(snapshot.docs);
+                navDisplay(user);
+            });
         } else {
-            console.log('logged out');
+            displayItems([]);
+            navDisplay();
         }
     });
 
@@ -16,9 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.querySelector('#login-form');
     loginForm.addEventListener('submit', logInUser);
 
-    database.collection('products').get().then(snapshot => {
-        displayItems(snapshot.docs);
-    });
 });
 
 const addUser = (e) => {

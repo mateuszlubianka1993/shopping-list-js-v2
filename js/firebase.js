@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     auth.onAuthStateChanged(user => {
         if (user) {
-            database.collection('products').get().then(snapshot => {
+            database.collection('products').onSnapshot(snapshot => {
                 displayItems(snapshot.docs);
                 navDisplay(user);
             });

@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
             database.collection('products').onSnapshot(snapshot => {
                 displayItems(snapshot.docs);
                 navDisplay(user);
+            },err => {
+                console.log(err.message);
             });
         } else {
             displayItems([]);

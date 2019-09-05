@@ -40,12 +40,15 @@ const displayItems = (items) => {
 const navDisplay = (user) => {
     const loggedNav = document.querySelectorAll('.logged');
     const notLoggedNav = document.querySelectorAll('.not-logged');
+    const userName = document.querySelector('.user-name');
 
     if(user) {
         loggedNav.forEach(link => link.style.display = 'block');
         notLoggedNav.forEach(link => link.style.display = 'none');
+        userName.innerHTML = user.email;
     } else {
         loggedNav.forEach(link => link.style.display = 'none');
         notLoggedNav.forEach(link => link.style.display = 'block');
+        userName.innerHTML = '';
     }
 }; 

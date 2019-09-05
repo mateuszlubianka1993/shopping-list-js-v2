@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.querySelector('#login-form');
     loginForm.addEventListener('submit', logInUser);
 
+    const newProductForm = document.querySelector('#newproduct-form');
+    newProductForm.addEventListener('submit', addProduct);
+
 });
 
 const addUser = (e) => {
@@ -52,5 +55,19 @@ const logInUser = (e) => {
         const loginForm = document.querySelector('#login-form');
         $('#login-modal').modal('hide');
         loginForm.reset();
+    });
+};
+
+const addProduct = (e) => {
+    e.preventDefault();
+
+    database.collection('products').add({
+        name: document.querySelector('#product-name').value,
+        quantity: document.querySelector('#product-quantity').value,
+        unit: document.querySelector('#product-unit').value
+    }).then(() => {
+        const newProductForm = document.querySelector('#newproduct-form');
+        $('#newproduct-modal').modal('hide');
+        newProductForm.reset();
     });
 };

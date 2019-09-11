@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             navDisplay();
         }
     });
-
+    
     const signupForm = document.querySelector('#signup-form');
     signupForm.addEventListener('submit', addUser);
 

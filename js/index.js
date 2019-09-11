@@ -15,7 +15,7 @@ const displayItems = (items) => {
         items.forEach(item => {
             const product = item.data();
             const listItem = `
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" data-id="${item.id}">
                         ${product.name}
                     <span class="justify-content-between align-items-center">
                         <span class="badge badge-primary badge-pill">${product.quantity}</span>

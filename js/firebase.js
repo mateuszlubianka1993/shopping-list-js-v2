@@ -25,6 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const newProductForm = document.querySelector('#newproduct-form');
     newProductForm.addEventListener('submit', addProduct);
 
+    setTimeout(() => {
+        const deleteBtns = document.querySelectorAll('.delete-btn');
+        deleteBtns.forEach(btn => {
+        btn.addEventListener('click', deleteProduct);
+        });
+    },800)
+
+    
 });
 
 const addUser = (e) => {
@@ -72,4 +80,9 @@ const addProduct = (e) => {
         $('#newproduct-modal').modal('hide');
         newProductForm.reset();
     });
+};
+
+const deleteProduct = (e) => { 
+    productId = e.target.parentElement.getAttribute('data-id');
+    database.collection('products').doc(productId).delete();
 };

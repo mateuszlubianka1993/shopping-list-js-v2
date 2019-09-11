@@ -21,7 +21,7 @@ const displayItems = (items) => {
                         <span class="badge badge-primary badge-pill">${product.quantity}</span>
                         <span class="badge badge-primary badge-pill">${product.unit}</span>
                     </span>
-                    <button type="button" class="btn btn-primary">Bought</button>
+                    <button type="button" class="btn btn-primary delete-btn">Bought</button>
                 </li>
             `;
             domElement += listItem;

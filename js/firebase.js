@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
             database.collection('products').onSnapshot(snapshot => {
                 displayItems(snapshot.docs);
                 navDisplay(user);
+                // console.log(snapshot.docs)
             },err => {
                 console.log(err.message);
             });
@@ -24,14 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const newProductForm = document.querySelector('#newproduct-form');
     newProductForm.addEventListener('submit', addProduct);
-
-    setTimeout(() => {
-        const deleteBtns = document.querySelectorAll('.delete-btn');
-        deleteBtns.forEach(btn => {
-        btn.addEventListener('click', deleteProduct);
-        });
-    },800)
-
     
 });
 

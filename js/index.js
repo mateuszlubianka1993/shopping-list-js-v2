@@ -11,22 +11,38 @@ document.addEventListener('DOMContentLoaded', function () {
 const list = document.querySelector('.products-list');
 const displayItems = (items) => {
     if (items.length > 0) {
-        let domElement = '';
-        items.forEach(item => {
+        
+        const listItems = items.map(item => {
             const product = item.data();
-            const listItem = `
-                    <li class="list-group-item d-flex justify-content-between align-items-center" data-id="${item.id}">
-                        ${product.name}
-                    <span class="justify-content-between align-items-center">
-                        <span class="badge badge-primary badge-pill">${product.quantity}</span>
-                        <span class="badge badge-primary badge-pill">${product.unit}</span>
-                    </span>
-                    <button type="button" class="btn btn-primary delete-btn">Bought</button>
-                </li>
+            const li = document.createElement('li');
+            const btn = document.createElement('button');
+            const name = document.createElement('p');
+            const detail = document.createElement('span');
+
+            li.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-center');
+            li.setAttribute('data-id', item.id);
+            btn.setAttribute('class', 'btn btn-primary delete-btn');
+            detail.setAttribute('class', 'justify-content-between align-items-center');
+
+            btn.addEventListener('click', deleteProduct);
+
+            detail.innerHTML = `
+                <span class="badge badge-primary badge-pill">${product.quantity}</span>
+                <span class="badge badge-primary badge-pill">${product.unit}</span>
             `;
-            domElement += listItem;
+            name.innerHTML = product.name;
+            btn.innerText = 'Bought';
+
+            li.appendChild(name);
+            li.appendChild(detail);
+            li.appendChild(btn);
+            return listItem = li;
         });
-        list.innerHTML = domElement;
+        // console.log(listItems);
+        list.innerHTML ='';
+        listItems.forEach(item => {
+            list.appendChild(item);
+        })
     } else {
         list.innerHTML = `
                 <h3 class="text-center">

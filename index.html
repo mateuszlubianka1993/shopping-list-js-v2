@@ -21,19 +21,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto w-100 justify-content-end">
                 <li class="nav-item logged">
-                    <p class="nav-link user-name"></p>
+                    <p class="nav-link modal-link user-name"></p>
                 </li>
                 <li class="nav-item logged">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#logout-modal">Log out</a>
-                </li>
-                <li class="nav-item logged">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#newproduct-modal">New product</a>
+                    <a class="nav-link modal-link" href="#" data-toggle="modal" data-target="#logout-modal">Log out</a>
                 </li>
                 <li class="nav-item not-logged">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
+                    <a class="nav-link modal-link" href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
                 </li>
                 <li class="nav-item not-logged">
-                    <a class="nav-link not-logged" href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a>
+                    <a class="nav-link modal-link not-logged" href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a>
                 </li>
             </ul>
         </div>
@@ -44,9 +41,12 @@
         <h2 class="header txt text-center">What do you need?</h2>
     </header>
 
-    <ul class="list-group container products-list">
+    <section class="list-section container">
+        <ul class="list-group container products-list">
 
-    </ul>
+        </ul>
+        <button type="button" class="modal-link btn btn-primary btn-lg logged" data-toggle="modal" data-target="#newproduct-modal">New Product</button>
+    </section>
 
     <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">

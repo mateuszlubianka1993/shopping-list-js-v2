@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.nav-link');
+    const links = document.querySelectorAll('.modal-link');
     links.forEach(link => {
         link.addEventListener('click', function () {
             $(`${link.dataset.target}`).modal('toggle');

@@ -27,8 +27,7 @@ const displayItems = (items) => {
             btn.addEventListener('click', deleteProduct);
 
             detail.innerHTML = `
-                <span class="badge badge-primary badge-pill">${product.quantity}</span>
-                <span class="badge badge-primary badge-pill">${product.unit}</span>
+                <span class="badge">${product.quantity} ${product.unit}</span>   
             `;
             name.innerHTML = product.name;
             btn.innerText = 'Bought';

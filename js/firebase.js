@@ -63,11 +63,13 @@ const logInUser = (e) => {
 
 const addProduct = (e) => {
     e.preventDefault();
+    const user = document.querySelector('.user-name').innerHTML;
 
     database.collection('products').add({
         name: document.querySelector('#product-name').value,
         quantity: document.querySelector('#product-quantity').value,
-        unit: document.querySelector('#product-unit').value
+        unit: document.querySelector('#product-unit').value,
+        user: user
     }).then(() => {
         const newProductForm = document.querySelector('#newproduct-form');
         $('#newproduct-modal').modal('hide');
@@ -79,3 +81,4 @@ const deleteProduct = (e) => {
     productId = e.target.parentElement.getAttribute('data-id');
     database.collection('products').doc(productId).delete();
 };
+

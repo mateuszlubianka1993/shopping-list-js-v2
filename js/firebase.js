@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     auth.onAuthStateChanged(user => {
         if (user) {
-            database.collection('products').onSnapshot(snapshot => {
+            database.collection('products').where('user', '==', `${user.email}`).onSnapshot(snapshot => {
                 displayItems(snapshot.docs);
                 navDisplay(user);
-                // console.log(snapshot.docs)
             },err => {
                 console.log(err.message);
             });

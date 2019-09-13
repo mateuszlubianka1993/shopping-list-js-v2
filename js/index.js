@@ -16,18 +16,19 @@ const displayItems = (items) => {
             const product = item.data();
             const li = document.createElement('li');
             const btn = document.createElement('button');
-            const name = document.createElement('p');
+            const name = document.createElement('span');
             const detail = document.createElement('span');
 
             li.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-center');
             li.setAttribute('data-id', item.id);
-            btn.setAttribute('class', 'btn btn-primary delete-btn');
+            btn.setAttribute('class', 'btn btn-primary delete-btn btn-sm bought-btn');
             detail.setAttribute('class', 'justify-content-between align-items-center');
+            name.setAttribute('class', 'product-name');
 
             btn.addEventListener('click', deleteProduct);
 
             detail.innerHTML = `
-                <span class="badge">${product.quantity} ${product.unit}</span>   
+                <span class="badge product-detail">${product.quantity} ${product.unit}</span>   
             `;
             name.innerHTML = product.name;
             btn.innerText = 'Bought';

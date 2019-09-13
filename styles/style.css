@@ -67,3 +67,11 @@ body {
     box-shadow: 0 0 10px 0 #f1f2ab inset, 0 0 20px 2px #f1f2ab;
     border: 3px solid #f1f2ab;
 }
+
+.modal-header {
+    background-color: #1A284D;
+    color: #FFF;
+}
+.modal-header button.close {
+    color: #FFF;
+}

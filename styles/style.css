@@ -75,3 +75,22 @@ body {
 .modal-header button.close {
     color: #FFF;
 }
+
+@media (max-width: 768px) {
+    .products-list {
+        width: 70%;
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 535px) {
+    .products-list {
+        width: 85%;
+        margin-bottom: 35px;
+    }
+}
+@media (max-width: 425px) {
+    .products-list {
+        width: 95%;
+        margin-bottom: 30px;
+    }
+}

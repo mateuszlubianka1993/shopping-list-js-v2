@@ -13,41 +13,44 @@
 </head>
 
 <body>
-    <nav id="main-nav" class="navbar navbar-expand-lg navbar-light main-nav">
-        <a class="navbar-brand" href="#"><i class="fas fa-shopping-basket"></i> Shopping List</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto w-100 justify-content-end">
-                <li class="nav-item logged">
-                    <p class="nav-link modal-link user-name"></p>
-                </li>
-                <li class="nav-item logged">
-                    <a class="nav-link modal-link nav-txt" href="#" data-toggle="modal" data-target="#logout-modal">Log out</a>
-                </li>
-                <li class="nav-item not-logged">
-                    <a class="nav-link modal-link nav-txt" href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
-                </li>
-                <li class="nav-item not-logged">
-                    <a class="nav-link modal-link nav-txt not-logged" href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="main-header">
-        <h1 class="header txt text-center">Shopping List</h1>
-        <h2 class="header txt text-center">What do you need?</h2>
-    </header>
-
-    <section class="list-section container">
-        <ul class="list-group container products-list">
-
-        </ul>
-        <button type="button" class="modal-link btn btn-primary btn-lg logged new-product-btn" data-toggle="modal" data-target="#newproduct-modal">New Product</button>
-    </section>
+    <div class="content">
+            <nav id="main-nav" class="navbar navbar-expand-lg navbar-light main-nav">
+                    <a class="navbar-brand" href="#"><i class="fas fa-shopping-basket"></i> Shopping List</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto w-100 justify-content-end">
+                            <li class="nav-item logged">
+                                <p class="nav-link modal-link user-name"></p>
+                            </li>
+                            <li class="nav-item logged">
+                                <a class="nav-link modal-link nav-txt" href="#" data-toggle="modal" data-target="#logout-modal">Log out</a>
+                            </li>
+                            <li class="nav-item not-logged">
+                                <a class="nav-link modal-link nav-txt" href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
+                            </li>
+                            <li class="nav-item not-logged">
+                                <a class="nav-link modal-link nav-txt not-logged" href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            
+                <header class="main-header">
+                    <h1 class="header txt text-center">Shopping List</h1>
+                    <h2 class="header txt text-center">What do you need?</h2>
+                </header>
+            
+                <section class="list-section container">
+                    <ul class="list-group container products-list">
+            
+                    </ul>
+                    <button type="button" class="modal-link btn btn-primary btn-lg logged new-product-btn" data-toggle="modal" data-target="#newproduct-modal">New Product</button>
+                </section>
+    </div>
+    
 
     <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
@@ -170,6 +173,17 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="animation-bg">
+        <ul class="box-container">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
 
     <!-- firebase -->
